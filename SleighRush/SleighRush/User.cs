@@ -8,8 +8,8 @@ namespace SleighRush
 {
     public class User
     {
-        public string name;
-        public int score;
+        private string name;
+        private int score;
 
         public User(string name)
         {

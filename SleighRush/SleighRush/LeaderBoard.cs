@@ -12,10 +12,15 @@ namespace SleighRush
 {
     public partial class LeaderBoard : Form
     {
+        private List<User> users;
+
         public LeaderBoard()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            GameConfigurationManager gameConfig = new GameConfigurationManager();
+            gameConfig.parseConfigurationFile();
+            users = gameConfig.users;
         }
 
         private void backButtonClicked(object sender, EventArgs e)
@@ -25,5 +30,7 @@ namespace SleighRush
             gameScreenForm.ShowDialog();
             this.Close();
         }
+        
+
     }
 }
