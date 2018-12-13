@@ -1,1 +1,3 @@
-# GUI-Project
+# GUI-Project(s)
+
+This repository will contain GUI projects. Only GUI projects...
