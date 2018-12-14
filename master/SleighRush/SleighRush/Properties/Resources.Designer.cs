@@ -193,6 +193,26 @@ namespace SleighRush.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap starnight21 {
+            get {
+                object obj = ResourceManager.GetObject("starnight21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap starnight3 {
+            get {
+                object obj = ResourceManager.GetObject("starnight3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap starrynight {
             get {
                 object obj = ResourceManager.GetObject("starrynight", resourceCulture);

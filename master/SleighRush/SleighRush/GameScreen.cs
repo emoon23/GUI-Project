@@ -10,7 +10,7 @@ using System.Windows.Forms;
 /// <summary>
 /// Purpose of this program:
 /// An interactive game for the MEAU Christmas Contest.
-/// This game will be played on the CNC M
+/// This game will be played on the CNC M80
 /// </summary>
 namespace SleighRush
 {
@@ -27,15 +27,18 @@ namespace SleighRush
 
         User currentPlayer;
 
+      
+
         private void Reset()
         {
             //trophy.Visible = false; //hide the trophy image
             Start.Enabled = false; //Disable the button when game is running
-            Leader.Enabled = true; //Disabled while game is running
+            Leader.Enabled = false; //Disabled while game is running
+            Exit.Enabled = false;
             explosion.Visible = false; //Hide the explosion image
             trafficSpeed = 5; //Set default traffic speed
             sleighSpeed = 5; //Set the road speed back to default
-
+            
             Score = 0; //Reset score to 0
 
             player.Left = 161; //Reset player left
@@ -59,6 +62,13 @@ namespace SleighRush
 
             //Start the timer
             timer1.Start();
+
+            //This will make GameScreen Fullscreen
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
         }//end of Reset
 
         public GameScreen()
@@ -260,7 +270,8 @@ namespace SleighRush
             timer1.Stop();
 
             Start.Enabled = true;
-
+            Leader.Enabled = true;
+            Exit.Enabled = true;
             //showing the explosion image on top of sleigh
             explosion.Visible = true;
             player.Controls.Add(explosion);
@@ -310,6 +321,13 @@ namespace SleighRush
             }
             testDialog.Dispose();
             return newUser;
+        }
+
+        //Exit out of the Application...
+        private void Exit_Click(object sender, EventArgs e)
+        {
+           
+            Application.Exit();
         }
     }//end of GameScreen : form
 }//end of namespace
