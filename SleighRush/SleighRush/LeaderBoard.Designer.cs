@@ -40,7 +40,7 @@
             // 
             this.highScore.AutoSize = true;
             this.highScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highScore.Location = new System.Drawing.Point(330, 9);
+            this.highScore.Location = new System.Drawing.Point(330, 18);
             this.highScore.Name = "highScore";
             this.highScore.Size = new System.Drawing.Size(140, 25);
             this.highScore.TabIndex = 0;
@@ -49,7 +49,7 @@
             // backBtn
             // 
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(12, 401);
+            this.backBtn.Location = new System.Drawing.Point(358, 401);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(84, 37);
             this.backBtn.TabIndex = 1;
@@ -63,14 +63,15 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Name,
             this.Score});
-            this.dataGridView1.Location = new System.Drawing.Point(221, 117);
+            this.dataGridView1.Location = new System.Drawing.Point(277, 60);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(311, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(246, 175);
             this.dataGridView1.TabIndex = 2;
             // 
             // Name
             // 
             this.Name.HeaderText = "Name";
+            this.Name.MaxInputLength = 56;
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
             // 
@@ -82,15 +83,15 @@
             // 
             // LeaderBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::SleighRush.Properties.Resources.starnight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.highScore);
-            this.Text = "LeaderBoard";
+            this.Text = "LeaderBoardGrid";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LeaderBoard_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
