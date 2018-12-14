@@ -19,3 +19,4 @@ C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\SleighRush\SleighRu
 C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\SleighRush\SleighRush\obj\Release\SleighRush.csproj.CoreCompileInputs.cache
 C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\SleighRush\SleighRush\obj\Release\SleighRush.exe
 C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\SleighRush\SleighRush\obj\Release\SleighRush.pdb
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\SleighRush\SleighRush\obj\Release\SleighRush.UsernamePrompt.resources

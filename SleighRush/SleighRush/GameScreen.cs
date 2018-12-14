@@ -25,11 +25,13 @@ namespace SleighRush
         int Score = 0;
         Random rnd = new Random();
 
+        User currentPlayer;
+
         private void Reset()
         {
             //trophy.Visible = false; //hide the trophy image
             Start.Enabled = false; //Disable the button when game is running
-            Leader.Enabled = true ; //Disabled while game is running
+            Leader.Enabled = true; //Disabled while game is running
             explosion.Visible = false; //Hide the explosion image
             trafficSpeed = 5; //Set default traffic speed
             sleighSpeed = 5; //Set the road speed back to default
@@ -62,6 +64,8 @@ namespace SleighRush
         public GameScreen()
         {
             InitializeComponent();
+
+            currentPlayer = null;
             Reset();
         }
 
@@ -75,18 +79,18 @@ namespace SleighRush
             skyTrack2.Top += skySpeed;
 
             //If the track has gone past -630 then set it back to default
-            
-            if(skyTrack1.Top > 630)
+
+            if (skyTrack1.Top > 630)
             {
                 skyTrack1.Top = -630;
             }
-            if(skyTrack2.Top > 630)
+            if (skyTrack2.Top > 630)
             {
                 skyTrack2.Top = -630;
             }
             //end of track animation
-            if(sleighLeft) { player.Left -= sleighSpeed; } //Move the sleigh if the sleigh left is true
-            if(sleighRight) { player.Left += sleighSpeed; } //Move the sleigh if the sleigh right is true
+            if (sleighLeft) { player.Left -= sleighSpeed; } //Move the sleigh if the sleigh left is true
+            if (sleighRight) { player.Left += sleighSpeed; } //Move the sleigh if the sleigh right is true
             //end of sleigh movement
 
             //bounce the sleigh off boundaries of the panel
@@ -105,14 +109,14 @@ namespace SleighRush
             AI2.Top += trafficSpeed;
 
             //Respawn the AIs and change their images
-            if(AI1.Top > panel1.Height)
+            if (AI1.Top > panel1.Height)
             {
                 changeAI1(); //Change the AI images once they left screen
                 AI1.Left = rnd.Next(2, 160); //Random numbers where they appear on the left
                 AI1.Top = rnd.Next(100, 200) * -1; //Random numbers where they appear on the Top
 
             }
-            if(AI2.Top > panel1.Height)
+            if (AI2.Top > panel1.Height)
             {
                 changeAI2();
                 AI2.Left = rnd.Next(185, 327); //Change numbers where they appear on the left
@@ -122,7 +126,7 @@ namespace SleighRush
 
             //This is the Hit Test on player and AI
             //The conditional statements below will test if player hits AI or AI hits player
-            if(player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
+            if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
             {
                 gameOver(); //This is run when the player gets hit by an object (AI)
             }
@@ -130,31 +134,31 @@ namespace SleighRush
 
             //Speeding up traffic
             //If Score is above 100 AND Below 500
-            if(Score > 100 && Score < 500)
+            if (Score > 100 && Score < 500)
             {
                 trafficSpeed = 6;
                 skySpeed = 7;
             }
             //if score is above 500 AND Below 1000
-           else if(Score > 500 && Score < 1000)
+            else if (Score > 500 && Score < 1000)
             {
                 trafficSpeed = 7;
                 skySpeed = 8;
             }
             //if score is above 1200
-            else if(Score > 1200)
+            else if (Score > 1200)
             {
                 trafficSpeed = 9;
                 skySpeed = 10;
             }
-            else if(Score > 1400)
+            else if (Score > 1400)
             {
                 trafficSpeed = 11;
                 skySpeed = 13;
             }
             //end of traffic speeding
 
-            
+
         }
 
         private void moveCar(object sender, KeyEventArgs e)
@@ -187,7 +191,7 @@ namespace SleighRush
         }
 
         //Switch case where the images will cycle through
-       private void changeAI1()
+        private void changeAI1()
         {
             int num = rnd.Next(1, 7);
             switch (num)
@@ -215,7 +219,7 @@ namespace SleighRush
                     break;
                 default:
                     break;
-                    
+
             }
         }//end of changeAI1
 
@@ -248,7 +252,7 @@ namespace SleighRush
                     break;
                 default:
                     break;
-                
+
             }
         }//end of changeAI2
         private void gameOver()
@@ -264,11 +268,18 @@ namespace SleighRush
             explosion.BackColor = Color.Transparent;
             explosion.BringToFront();
 
-
+            if (currentPlayer != null)
+            {
+                currentPlayer.Score = Score;
+                // need to save to the leaderboard
+                GameConfigurationManager newConfig = new GameConfigurationManager();
+                newConfig.saveUserScore(currentPlayer);
+            }
         }//end of gameOver
 
         private void Start_Click(object sender, EventArgs e)
         {
+            currentPlayer = promptForName();
             Reset();
         }
 
@@ -283,6 +294,22 @@ namespace SleighRush
             LeaderBoard leaderboardForm = new LeaderBoard();
             leaderboardForm.ShowDialog();
             this.Close();
+        }
+
+        private User promptForName()
+        {
+            User newUser = null;
+            UsernamePrompt testDialog = new UsernamePrompt();
+            if (testDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string username = testDialog.textBox1.Text;
+                if (username.Length > 0)
+                {
+                    newUser = new User(username);
+                }
+            }
+            testDialog.Dispose();
+            return newUser;
         }
     }//end of GameScreen : form
 }//end of namespace

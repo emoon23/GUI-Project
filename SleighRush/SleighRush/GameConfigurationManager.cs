@@ -50,7 +50,7 @@ namespace SleighRush
         public void saveScores()
         {
             string userAndScoreString = "";
-            
+
             foreach (User user in users)
             {
                 userAndScoreString += user.Name + ":" + user.Score + ";";
@@ -61,6 +61,15 @@ namespace SleighRush
                 userAndScoreString = userAndScoreString.Substring(0, userAndScoreString.Length - 1); //need to erase the last ;, otherwise it screws up the parsing
             }
 
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings.Remove("Previous User Scores");
+            config.AppSettings.Settings.Add("Previous User Scores", userAndScoreString);
+            config.Save(ConfigurationSaveMode.Minimal);
+        }
+
+        public void saveUserScore(User user) {
+            string userAndScoreString = ConfigurationManager.AppSettings["Previous User Scores"];
+            userAndScoreString += ";" + user.Name + ":" + user.Score;
             Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             config.AppSettings.Settings.Remove("Previous User Scores");
             config.AppSettings.Settings.Add("Previous User Scores", userAndScoreString);
