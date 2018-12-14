@@ -20,7 +20,6 @@ namespace SleighRush
         public void parseConfigurationFile()
         {
             users.Clear();
-            //Dash needs to check this out
             string previousUsers = ConfigurationManager.AppSettings["Previous User Scores"];
             List<string> combinedUsers = previousUsers.Split(';').ToList<string>();
 
