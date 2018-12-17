@@ -35,14 +35,14 @@
             this.distance1 = new System.Windows.Forms.Label();
             this.tip = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Exit = new System.Windows.Forms.Button();
             this.player = new System.Windows.Forms.PictureBox();
             this.explosion = new System.Windows.Forms.PictureBox();
             this.AI2 = new System.Windows.Forms.PictureBox();
             this.AI1 = new System.Windows.Forms.PictureBox();
             this.skyTrack2 = new System.Windows.Forms.PictureBox();
             this.skyTrack1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Exit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.explosion)).BeginInit();
@@ -60,6 +60,7 @@
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(130, 59);
             this.Start.TabIndex = 0;
+            this.Start.TabStop = false;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.Start_Click);
@@ -72,6 +73,7 @@
             this.Leader.Name = "Leader";
             this.Leader.Size = new System.Drawing.Size(130, 59);
             this.Leader.TabIndex = 1;
+            this.Leader.TabStop = false;
             this.Leader.Text = "Leaderboard";
             this.Leader.UseVisualStyleBackColor = true;
             this.Leader.Click += new System.EventHandler(this.LeaderboardButtonClicked);
@@ -131,24 +133,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 424);
             this.panel1.TabIndex = 5;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Exit
-            // 
-            this.Exit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(214, 608);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(75, 36);
-            this.Exit.TabIndex = 6;
-            this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // player
             // 
@@ -213,10 +197,28 @@
             this.skyTrack1.TabStop = false;
             this.skyTrack1.Click += new System.EventHandler(this.skyTrack1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Exit
+            // 
+            this.Exit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Location = new System.Drawing.Point(214, 608);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(75, 36);
+            this.Exit.TabIndex = 6;
+            this.Exit.TabStop = false;
+            this.Exit.Text = "Exit";
+            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
             // GameScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 656);

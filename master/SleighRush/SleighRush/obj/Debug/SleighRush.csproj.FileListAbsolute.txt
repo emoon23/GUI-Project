@@ -22,3 +22,16 @@ C:\Users\Edward.Moon\Documents\Holiday Game\GUI-Project\master\SleighRush\Sleigh
 C:\Users\Edward.Moon\Documents\Holiday Game\GUI-Project\master\SleighRush\SleighRush\obj\Debug\SleighRush.exe
 C:\Users\Edward.Moon\Documents\Holiday Game\GUI-Project\master\SleighRush\SleighRush\obj\Debug\SleighRush.pdb
 C:\Users\Edward.Moon\Documents\Holiday Game\GUI-Project\master\SleighRush\SleighRush\obj\Debug\SleighRush.Menu.resources
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\bin\Debug\SleighRush.exe.config
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\bin\Debug\SleighRush.exe
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\bin\Debug\SleighRush.pdb
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.csprojAssemblyReference.cache
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.GameScreen.resources
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.LeaderBoard.resources
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.Menu.resources
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.Properties.Resources.resources
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.UsernamePrompt.resources
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.csproj.GenerateResource.cache
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.csproj.CoreCompileInputs.cache
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.exe
+C:\Users\Darya.Kiktenko\Documents\2018 Holiday Decor Contest\master\SleighRush\SleighRush\obj\Debug\SleighRush.pdb
